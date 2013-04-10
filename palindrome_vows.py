@@ -26,12 +26,19 @@ class Palindrome(Vows.Context):
         def should_reverse_and_cleanse_too(self, topic):
             expect(topic).to_equal("koebdluohSsihT")
 
-    class PalindromeIs(Vows.Context):
+    class IsPalindrome(Vows.Context):
         class Madam(Vows.Context):
             def topic(self):
                 return isPalindrome("MaDAm")
 
             def should_be_true(self, topic):
+                expect(topic).to_be_true()
+
+        class NonAlpha(Vows.Context):
+            def topic(self):
+                return isPalindrome("RiSe-To_VoT$e, Sir!")
+
+            def should_be_ok(self, topic):
                 expect(topic).to_be_true()
 
 
