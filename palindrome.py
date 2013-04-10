@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 import re
 
 """
@@ -19,7 +19,7 @@ def cleanse(text):
 
 
 if __name__ == '__main__':
-    text = input("Enter text: ")
+    text = raw_input("Enter text: ")
 
     if (isPalindrome(text)):
         print("Yes, it is a palindrome")
