@@ -19,4 +19,11 @@ class Palindrome(Vows.Context):
             expect(topic).to_equal("")
             expect(len(topic)).to_equal(0)
 
+    class Reverse(Vows.Context):
+        def topic(self):
+            return reverse("T'hi-s Should b-e (ok)")
+
+        def should_reverse_and_cleanse_too(self, topic):
+            expect(topic).to_equal("koebdluohSsihT")
+
 
