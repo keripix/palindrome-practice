@@ -11,3 +11,12 @@ class Palindrome(Vows.Context):
         def should_cleanse_input_from_non_alfa_chars(self, topic):
             expect(topic).to_equal("abcdefghijklmnopq")
 
+    class CleanseWhenEmpty(Vows.Context):
+        def topic(self):
+            return ""
+
+        def should_return_as_is(self, topic):
+            expect(topic).to_equal("")
+            expect(len(topic)).to_equal(0)
+
+
